@@ -6,3 +6,8 @@ CREATE TABLE projects (
   start_date BLOB,
   end_date BLOB
 )
+CREATE TABLE users (
+  id INTEGER PRIMARY KEY,
+  name TEXT,
+  age INTEGER
+)
