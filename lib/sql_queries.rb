@@ -26,7 +26,13 @@ ORDER BY name ASC;"
 end
 
 def selects_the_titles_and_amount_over_goal_of_all_projects_that_have_met_their_funding_goal
-"Write your SQL query Here"
+"SELECT title, sum(amount)
+FROM projects
+INNER JOIN pledges
+ON projects.id = pledges.project_id
+WHERE sum(amount) > funding_goal 
+GROUP BY project_id
+ORDER BY title ASC;"
 end
 
 def selects_user_names_and_amounts_of_all_pledges_grouped_by_name_then_orders_them_by_the_amount_and_users_name
