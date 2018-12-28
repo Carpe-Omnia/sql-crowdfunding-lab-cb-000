@@ -36,10 +36,11 @@ ORDER BY title ASC;"
 end
 
 def selects_user_names_and_amounts_of_all_pledges_grouped_by_name_then_orders_them_by_the_amount_and_users_name
-  "SELECT name, amount
+  "SELECT name, SUM(amount)
   FROM users
   INNER JOIN pledges
   ON users.id = pledges.user_id
+  GROUP BY name
   ORDER BY amount ASC, name ASC;"
 end
 
